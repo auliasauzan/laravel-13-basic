@@ -15,7 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('nim');
+<<<<<<< HEAD
             $table->timestamps();
+=======
+                        $table->timestamps();
+
+>>>>>>> 035bb36a9d1b03611d34fa03981d20d296b14206
         });
     }
 
@@ -26,4 +31,8 @@ return new class extends Migration
     {
         Schema::dropIfExists('students');
     }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 035bb36a9d1b03611d34fa03981d20d296b14206

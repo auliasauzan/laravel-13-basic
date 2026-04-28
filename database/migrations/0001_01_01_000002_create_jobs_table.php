@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+<<<<<<< HEAD
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->string('queue')->index();
@@ -43,6 +44,18 @@ return new class extends Migration
             $table->longText('exception');
             $table->timestamp('failed_at')->useCurrent();
         });
+=======
+       Schema::create('jobs', function (Blueprint $table) {
+       $table->id();
+       $table->string('name');
+       $table->integer('nim');
+            $table->timestamps();
+       
+
+     } );
+    
+        
+>>>>>>> 035bb36a9d1b03611d34fa03981d20d296b14206
     }
 
     /**
@@ -50,8 +63,16 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<< HEAD
         Schema::dropIfExists('jobs');
         Schema::dropIfExists('job_batches');
         Schema::dropIfExists('failed_jobs');
     }
 };
+=======
+        Schema::dropIfExists('students');
+        
+        
+    }
+};
+>>>>>>> 035bb36a9d1b03611d34fa03981d20d296b14206

@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">UNITAMA</a>
@@ -35,6 +36,16 @@
     <div class= "container my-5">
         {{ $slot }}
     </div>
+=======
+    <div class = "bg-primary py-5 text-center text-white">
+        <h1 Class = "fw-bold ">{{ $title }} </h1>
+    </div>
+
+    <div class = "container my-5">
+        {{ $slot }}
+    </div>
+
+>>>>>>> 035bb36a9d1b03611d34fa03981d20d296b14206
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>

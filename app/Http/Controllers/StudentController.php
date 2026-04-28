@@ -14,7 +14,11 @@ class StudentController extends Controller
     {
         return view('student.index', [
             'title' => 'Student',
+<<<<<<< HEAD
          'student' => Student::orderBy('id', 'desc')->get(),
+=======
+            'student' => Student::latest()->get(),
+>>>>>>> 035bb36a9d1b03611d34fa03981d20d296b14206
             //'students' => Student::orderBy('name', 'asc')->get(),
             ]);
     }

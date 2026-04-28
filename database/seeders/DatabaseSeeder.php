@@ -17,8 +17,11 @@ class DatabaseSeeder extends Seeder
     {
       $this->call([
             StudentSeeder::class,
+<<<<<<< HEAD
             DepartmentSeeder::class,
             LecturerSeeder::class,
+=======
+>>>>>>> 035bb36a9d1b03611d34fa03981d20d296b14206
       ]);
     }
 }
