@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-<<<<<<< HEAD
+        // 1. Tabel Jobs bawaan Laravel
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->string('queue')->index();
@@ -22,6 +22,7 @@ return new class extends Migration
             $table->unsignedInteger('created_at');
         });
 
+        // 2. Tabel Job Batches bawaan Laravel
         Schema::create('job_batches', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('name');
@@ -35,6 +36,7 @@ return new class extends Migration
             $table->integer('finished_at')->nullable();
         });
 
+        // 3. Tabel Failed Jobs bawaan Laravel
         Schema::create('failed_jobs', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->unique();
@@ -44,18 +46,14 @@ return new class extends Migration
             $table->longText('exception');
             $table->timestamp('failed_at')->useCurrent();
         });
-=======
-       Schema::create('jobs', function (Blueprint $table) {
-       $table->id();
-       $table->string('name');
-       $table->integer('nim');
-            $table->timestamps();
-       
 
-     } );
-    
-        
->>>>>>> 035bb36a9d1b03611d34fa03981d20d296b14206
+        // 4. Tabel Students milik kamu (Sudah diperbaiki namanya)
+        Schema::create('students', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('nim')->unique(); // NIM biasanya pakai string agar angka 0 di depan tidak hilang
+            $table->timestamps();
+        });
     }
 
     /**
@@ -63,16 +61,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-<<<<<<< HEAD
-        Schema::dropIfExists('jobs');
-        Schema::dropIfExists('job_batches');
-        Schema::dropIfExists('failed_jobs');
-    }
-};
-=======
         Schema::dropIfExists('students');
-        
-        
+        Schema::dropIfExists('failed_jobs');
+        Schema::dropIfExists('job_batches');
+        Schema::dropIfExists('jobs');
     }
 };
->>>>>>> 035bb36a9d1b03611d34fa03981d20d296b14206

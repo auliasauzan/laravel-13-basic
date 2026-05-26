@@ -11,5 +11,6 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 class Student extends Model
 {
     /** @use HasFactory<\Database\Factories\StudentFactory> */
+    use HasFactory;
     protected $fillable = ['name', 'nim'];
 }

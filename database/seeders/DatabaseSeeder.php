@@ -13,15 +13,14 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
-    public function run(): void
-    {
-      $this->call([
-            StudentSeeder::class,
-<<<<<<< HEAD
-            DepartmentSeeder::class,
-            LecturerSeeder::class,
-=======
->>>>>>> 035bb36a9d1b03611d34fa03981d20d296b14206
-      ]);
-    }
+   public function run(): void
+{
+    $this->call([
+        StudentSeeder::class,
+        DepartmentSeeder::class,
+        LecturerSeeder::class,
+        OrganizationSeeder::class,
+    ]);
 }
+    }
+
