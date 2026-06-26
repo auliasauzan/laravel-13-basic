@@ -28,3 +28,14 @@ Route::resource('organization', OrganizationController::class);
 
 Route::delete('/student/{student}', [StudentController::class, 'destroy'])->name('student.destroy');
 
+Route::get('/student/{student}/edit', [StudentController::class, 'edit'])->name('student.edit');
+Route::put('/student/{student}', [StudentController::class, 'update'])->name('student.update');
+Route::delete('/student/{student}', [StudentController::class, 'destroy'])->name('student.destroy');
+
+// Soft deletes
+Route::get('/student/trash', [StudentController::class, 'trash'])->name('student.trash');
+Route::put('/student/{student}/restore', [StudentController::class, 'restore'])->name('student.restore')->withTrashed();
+Route::delete('/student/{student}/force-delete', [StudentController::class, 'forceDelete'])->name('student.forceDelete')->withTrashed();
+
+Route::resource('department', DepartmentController::class);
+Route::resource('lecturer', LecturerController::class);

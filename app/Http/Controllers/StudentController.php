@@ -11,13 +11,32 @@ class StudentController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view('student.index', [
-            'title' => 'Student',
-            'student' => Student::latest()->get(),
-            // 'students' => Student::orderBy('name', 'asc')->get(),
-        ]);
-    }
+{
+    return view('student.index', [
+        'title' => 'Student',
+        'students' => Student::latest()->get(),
+    ]);
+}
+
+public function trash()
+{
+    return view('student.trash', [
+        'title'    => 'Trash Student',
+        'students' => Student::onlyTrashed()->latest()->get(),
+    ]);
+}
+
+public function restore(Student $student)
+{
+    $student->restore();
+    return to_route('student.trash')->withSuccess('Data berhasil dikembalikan');
+}
+
+public function forceDelete(Student $student)
+{
+    $student->forceDelete();
+    return to_route('student.trash')->withSuccess('Data berhasil dihapus secara permanen');
+}
 
     /**
      * Show the form for creating a new resource.
@@ -35,6 +54,7 @@ class StudentController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
             'nim' => 'required|digits:11|numeric',
+            'gender' => 'required|in:male,female',
         ], [
             'name.required' => 'Nama Tidak Boleh Kosong',
             'name.max' => 'Nama Maksimal 255 Karakter',
